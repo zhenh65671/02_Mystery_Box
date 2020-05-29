@@ -24,8 +24,15 @@ class Start:
         self.mystery_instructions.grid(row=1)
 
         # Entry box... (row 2)
-        self.start_amount_entry = Entry(self.start_frame, font="Arial 16 bold")
+        self.start_amount_entry = Entry(self.start_frame, font="Arial 19 bold")
         self.start_amount_entry.grid(row=2)
+
+        # Button frame (row 3)
+        self.stakes_frame = Frame(self.start_frame)
+        self.stakes_frame.grid(row=3)
+
+        # Buttons go here...
+        button_font = "Arial 12 bold"
 
         # Play Button (row 3)
         self.lowstakes_button = Button(text="Low ($5)",
