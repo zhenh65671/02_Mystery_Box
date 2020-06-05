@@ -23,9 +23,20 @@ class Start:
                                           wrap=288, justify=LEFT, padx=10, pady=10)
         self.mystery_instructions.grid(row=1)
 
-        # Entry box... (row 2)
-        self.start_amount_entry = Entry(self.start_frame, font="Arial 19 bold")
-        self.start_amount_entry.grid(row=2)
+        # Entry box Button & Error Label (row 2)
+        self.entry_error_frame = Frame(self.start_frame, width=200)
+        self.entry_error_frame.grid(row=2)
+
+        self.start_amount_entry = Entry(self.entry_error_frame,
+                                        font="Arial 143 bold",
+                                        text="Add funds",
+                                        command=self.check_funds)
+        self.add_funds_button.grid(row=1, column=1)
+
+        self.amount_error_label = Label(self.entry_error_frame, fg="maroon",
+                                        text="", font="Arial 10 bold", wrap=275,
+                                        justify=LEFT)
+        self.amount_error_label.grid(row=1, columnspan=2, pady=5)
 
         # Button frame (row 3)
         self.stakes_frame = Frame(self.start_frame)
@@ -55,12 +66,17 @@ class Start:
         self.amount_error_label = Label(self.start_frame, text="You dumb")
         self.amount_error_label.grid(row=4, pady=5)
 
+        # Disable all starks buttons at start
+        self.low_stakes_button.config(state=DISABLED)
+        self.medium_stakes_button.config(state=DISABLED)
+        self.high_stakes_button.config(state=DISABLED)
+
         # Help Button
         self.help_button = Button(self.start_frame, text="How to play",
                                   bg="#808080", fg="White", font=button_font)
         self.help_button.grid(row=5, pady=10)
 
-    def to_game(self, stakes):
+    def check_fund(self):
         starting_balance = self.start_amount_entry.get()
 
         # Set error background colours (and assume that there are no
@@ -72,8 +88,14 @@ class Start:
         self.start_amount_entry.configure(bg="white")
         self.amount_error_label.config(text="")
 
+        # Disable all starks buttons in case user changes mind and
+        # decrease amount entered
+        self.low_stakes_button.config(state=DISABLED)
+        self.medium_stakes_button.config(state=DISABLED)
+        self.high_stakes_button.config(state=DISABLED)
+
         try:
-            starting_balance= int(starting_balance)
+            starting_balance = int(starting_balance)
 
             if starting_balance < 5:
                 has_error = "Yes"
@@ -82,6 +104,59 @@ class Start:
             elif starting_balance > 50:
                 has_error = "Yes"
                 error_feedback = "Too high! The most you can risk in "\
+                                 "this game is $50"
+
+            elif starting_balance >= 15:
+                # enable all buttons
+                self.low_stakes_button.config(state=NORMAL)
+                self.medium_stakes_button.config(state=NORMAL)
+                self.high_stakes_button.config(state=NORMAL)
+
+            elif starting_balance >= 10:
+                # enable low and medium buttons
+                self.low_stakes_button.config(state=NORMAL)
+                self.medium_stakes_button.config(state=NORMAL)
+            else:
+                self.low_stakes_button.config(state=NORMAL)
+
+        except ValueError:
+            has_errors = "Yes"
+            error_feedback = "Please enter a dollar amount (no text / decimals)"
+
+        if has_error == "Yes":
+            self.start_amount_entry.config(bg=error_back)
+            self.amount_error_label.config(text=error_feedback)
+
+        else:
+            # set starting balance to amount entered by user
+            self.starting_funds.set(starting_balance)
+
+    def to_game(self, stakes):
+
+        # resrieve starting balance
+        starting_balance = self.starting_funds.get()
+
+        Game(self, stakes, starting_balance)
+
+        # Set error background colours (and assume that there are no
+        # error at the start
+        error_back = "#ffafaf"
+        has_error = "no"
+
+        # Set error background t white (for testing purposes) ...
+        self.start_amount_entry.configure(bg="white")
+        self.amount_error_label.config(text="")
+
+        try:
+            starting_balance = int(starting_balance)
+
+            if starting_balance < 5:
+                has_error = "Yes"
+                error_feedback = "Sorry, the least you " \
+                                 "can play with is $5"
+            elif starting_balance > 50:
+                has_error = "Yes"
+                error_feedback = "Too high! The most you can risk in " \
                                  "this game is 50"
 
             elif starting_balance < 10 and (stakes == 2 or stakes == 3):
@@ -93,18 +168,6 @@ class Start:
                 has_error = "Yes"
                 error_feedback = "Sorry you only can afford to " \
                                  "play a medium starks game."
-
-
-        except ValueError:
-            has_errors = "Yes"
-            error_feedback = "Please enter a dollar amount (no text / decimals)"
-
-        if has_error == "Yes":
-            self.start_amount_entry.config(bg=error_back)
-            self.amount_error_label.config(text=error_feedback)
-
-        else:
-            Game(self, stakes, starting_balance)
 
             # Hide start up window
             # Root.withdraw()
