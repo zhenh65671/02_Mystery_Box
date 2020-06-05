@@ -20,7 +20,7 @@ class Start:
                                                "(between $5 and $50) in the box"
                                                "below. Then choose the stakes."
                                                "The higher the stakes, the more you can win!",
-                                          wrap=288, justidy=LEFT, padx=10, pady=10)
+                                          wrap=288, justify=LEFT, padx=10, pady=10)
         self.mystery_instructions.grid(row=1)
 
         # Entry box... (row 2)
@@ -35,21 +35,56 @@ class Start:
         button_font = "Arial 12 bold"
 
         # Orange low stakes button...
-        self.lowstakes_button = Button(self.stakes_frame, text="Low ($5)",
+        self.low_stakes_button = Button(self.stakes_frame, text="Low ($5)",
                                        command=lambda: self.to_game(1),
-                                       font=button_font, bg="#FFFF33")
-        self.lowstakes_button.grid(row=0,column=0, padx=10)
+                                       font=button_font, bg="#FF9933")
+        self.low_stakes_button.grid(row=0,column=0, padx=10)
 
-        # Play Button (row 3)
-        self.lowstakes_button = Button(text="Low ($5)",
-                                       command=lambda: self.to_game(1))
-        self.lowstakes_button.grid(row=2, padx=10)
+        # Yellow medium stakes button...
+        self.medium_stakes_button = Button(self.stakes_frame, text="Medium ($10)",
+                                          command=lambda: self.to_game(2),
+                                          font=button_font, bg="#FFFF33")
+        self.medium_stakes_button.grid(row=0, column=1, padx=5, pady=10)
+
+        # Green high stakes button...
+        self.high_stakes_button = Button(self.stakes_frame, text="High ($5)",
+                                         command=lambda: self.to_game(3),
+                                         font=button_font, bg="#99FF33")
+        self.high_stakes_button.grid(row=0, column=2,pady=10)
+
+        # Help Button
+        self.help_button = Button(self.start_frame, text="How to play",
+                                  bg="#808080", fg="White", font=button_font)
+        self.help_button.grid(row=4, pady=10)
 
     def to_game(self, stakes):
         starting_balance = self.start_amount_entry.get()
-        Game(self, stakes, starting_balance)
 
+        # Set error background colours (and assume that there are no
+        # error at the start
+        error_back = "#ffafaf"
+        has_error = "no"
 
+        # Set error background t white (for testing purposes) ...
+        self.start_amount_entry.configure(bg="white")
+        self.amount_error_label.config(text="")
+
+        try:
+            starting_balance= int(starting_balance)
+
+            if starting_balance < 5:
+                has_error = "Yes"
+                error_feedback = "Sorry, the least you " \
+                                 "can play with is $5"
+            elif starting_balance > 50:
+                has_error = "Yes"
+                error_feedback = "Too high! The most you can risk in "\
+                                 "this game is 50"
+
+            elif starting_balance < 10 and (stakes == 2 or stakes == 3):
+                has_error = "Yes"
+                error_feedback = "Sorry, you can only afford to " \
+                                 "play a low stakes games."
 
 class Game:
     def __init__(self, partner, stakes, starting_balance):
