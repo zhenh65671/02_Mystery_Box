@@ -12,7 +12,7 @@ class Start:
         # Mystery Heading (row 0)
         self.mystery_box_label = Label(self.start_frame, text="Mystery Box Game",
                                        font="Arial 19 bold")
-        self.mystery_box_label.grid(row=1)
+        self.mystery_box_label.grid(row=0)
 
         # Initial Instructions (row 1)
         self.mystery_instructions = Label(self.start_frame, fon="Arial 10 italic",
@@ -28,10 +28,16 @@ class Start:
         self.entry_error_frame.grid(row=2)
 
         self.start_amount_entry = Entry(self.entry_error_frame,
-                                        font="Arial 143 bold",
-                                        text="Add funds",
-                                        command=self.check_funds)
-        self.add_funds_button.grid(row=1, column=1)
+                                        font="Arial 14 bold",
+                                        text="Add funds")
+        self.start_amount_entry.grid(row=0, column=0)
+
+        self.add_funds_button = Button(self.entry_error_frame,
+                                       font="Arial 14 bold",
+                                       text="Add funds",
+                                       command=self.check_funds)
+        self.add_funds_button.grid(row=0, column=1)
+
 
         self.amount_error_label = Label(self.entry_error_frame, fg="maroon",
                                         text="", font="Arial 10 bold", wrap=275,
@@ -58,12 +64,12 @@ class Start:
         self.medium_stakes_button.grid(row=0, column=1, padx=5, pady=10)
 
         # Green high stakes button...
-        self.high_stakes_button = Button(self.stakes_frame, text="High ($5)",
+        self.high_stakes_button = Button(self.stakes_frame, text="High ($15)",
                                          command=lambda: self.to_game(3),
                                          font=button_font, bg="#99FF33")
         self.high_stakes_button.grid(row=0, column=2,pady=10)
 
-        self.amount_error_label = Label(self.start_frame, text="You dumb")
+        self.amount_error_label = Label(self.start_frame, text="")
         self.amount_error_label.grid(row=4, pady=5)
 
         # Disable all starks buttons at start
@@ -76,7 +82,7 @@ class Start:
                                   bg="#808080", fg="White", font=button_font)
         self.help_button.grid(row=5, pady=10)
 
-    def check_fund(self):
+    def check_funds(self):
         starting_balance = self.start_amount_entry.get()
 
         # Set error background colours (and assume that there are no
@@ -133,10 +139,13 @@ class Start:
 
     def to_game(self, stakes):
 
-        # resrieve starting balance
+        # retrieve starting balance
         starting_balance = self.starting_funds.get()
 
         Game(self, stakes, starting_balance)
+
+        # hide start up window
+        root.withdraw()
 
         # Set error background colours (and assume that there are no
         # error at the start
@@ -171,6 +180,10 @@ class Start:
 
             # Hide start up window
             # Root.withdraw()
+
+        except ValueError:
+            has_errors = "Yes"
+            error_feedback = "Please enter a dollar amount (no text / decimals)"
 
 
 class Game:
