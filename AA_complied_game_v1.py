@@ -201,7 +201,7 @@ class Game:
         # GUI Setup
         self.game_box = Toplevel()
         self.game_frame = Frame(self.game_box)
-        self.game_box.grid()
+        self.game_frame.grid()
 
         # Heading Row
         self.heading_label = Label(self.game_frame, text="Heading",

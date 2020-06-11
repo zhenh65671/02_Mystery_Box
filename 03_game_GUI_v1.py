@@ -10,7 +10,7 @@ class Start:
         self.start_frame.grid()
 
         self.push_me_button = Button(text="Push Me", command=self.to_game)
-        self.push_me_button.grid()(row=0, pady=10)
+        self.push_me_button.grid(row=0, pady=10)
 
     def to_game(self):
 
@@ -36,8 +36,9 @@ class Game:
 
         # GUI Setup
         self.game_box = Toplevel()
+
         self.game_frame = Frame(self.game_box)
-        self.game_box.grid()
+        self.game_frame.grid()
 
         # Heading Row
         self.heading_label = Label(self.game_frame, text="Heading",

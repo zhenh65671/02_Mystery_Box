@@ -1,5 +1,5 @@
 from tkinter import *
-from functools import partial  # to prevent unwanted windows
+from functools import partial  # To prevent unwanted windows
 import random
 
 
@@ -10,40 +10,19 @@ class Start:
         self.start_frame = Frame(padx=10, pady=10)
         self.start_frame.grid()
 
-        # Mystery Heading (row 0)
-        self.mystery_box_label = Label(self.start_frame, text="Mystery Box Game",
-                                       font="Arial 19 bold")
-        self.mystery_box_label.grid(row=1)
+        self.push_me_button = Button(text="Push Me", command=self.to_game)
+        self.push_me_button.grid(row=0, pady=10)
 
-        # Initial Instructions (row 1)
-        self.mystery_instructions = Label(self.start_frame, fon="Arial 10 italic",
-                                          text="Please enter a dollar amount"
-                                               "(between $5 and $50) in the box"
-                                               "below. Then choose the stakes."
-                                               "The higher the stakes, the more you can win!",
-                                          wrap=288, justidy=LEFT, padx=10, pady=10)
-        self.mystery_instructions.grid(row=1)
+    def to_game(self):
 
-        # Entry box... (row 2)
-        self.start_amount_entry = Entry(self.start_frame, font="Arial 19 bold")
-        self.start_amount_entry.grid(row=2)
+        # retrieve starting balance
+        starting_balance = 50
+        stakes = 2
 
-        # Button frame (row 3)
-        self.stakes_frame = Frame(self.start_frame)
-        self.stakes_frame.grid(row=3)
-
-        # Buttons go here...
-        button_font = "Arial 12 bold"
-
-        # Play Button (row 3)
-        self.lowstakes_button = Button(text="Low ($5)",
-                                       command=lambda: self.to_game(1))
-        self.lowstakes_button.grid(row=2, padx=10)
-
-    def to_game(self, stakes):
-        starting_balance = self.start_amount_entry.get()
         Game(self, stakes, starting_balance)
 
+        # hide start up window
+        root.withdraw()
 
 
 class Game:
@@ -51,23 +30,24 @@ class Game:
         print(stakes)
         print(starting_balance)
 
-        # Disable low stakes button
-        partner.lowstakes_button.config(state=DISABLED)
-
         # Initialise variables
         self.balance = IntVar()
 
         # Set starting balance to amount entered by user at the start of the game
         self.balance.set(starting_balance)
 
+        # Get value of stakes (use it as a multiplier when calculating winnings
+        self.multiplier = IntVar()
+        self.multiplier.set(stakes)
+
         # GUI Setup
         self.game_box = Toplevel()
         self.game_frame = Frame(self.game_box)
-        self.game_box.grid()
+        self.game_frame.grid()
 
         # Heading Row
-        self.heading_label = Label(self.game_frame, text="Heading",
-                                   font="Arial 19 bold", padx=10,
+        self.heading_label = Label(self.game_frame, text="Play...",
+                                   font="Arial 24 bold", padx=10,
                                    pady=10)
         self.heading_label.grid(row=0)
 
