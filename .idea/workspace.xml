@@ -68,7 +68,7 @@
       <file leaf-file-name="05_game_Playable_v2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/05_game_Playable_v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="272">
               <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -77,11 +77,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="05_game_playabel_v3.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="05_game_playabel_v3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/05_game_playabel_v3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="87" column="58" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
+            <state relative-caret-position="329">
+              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="05_game_playabel_v4.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/05_game_playabel_v4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -105,31 +117,6 @@
             <state relative-caret-position="136">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02_Start_GUI_v1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/02_Start_GUI_v1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02_start_GUI_v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/02_start_GUI_v2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#116#7564#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -161,6 +148,7 @@
         <option value="$PROJECT_DIR$/AA_complied_game_v1.py" />
         <option value="$PROJECT_DIR$/05_game_Playable_v2.py" />
         <option value="$PROJECT_DIR$/05_game_playabel_v3.py" />
+        <option value="$PROJECT_DIR$/05_game_playabel_v4.py" />
       </list>
     </option>
   </component>
@@ -200,24 +188,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.05_game_Playable_v2">
-    <configuration default="false" name="02_start_GUI_v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="02_Mystery_Box" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/02_start_GUI_v2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.05_game_playabel_v4">
     <configuration default="false" name="AA_complied_game_v1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -252,23 +223,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="04_prize_generation_V5" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="02_Mystery_Box" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04_prize_generation_V5.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="05_game_Playable_v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -282,6 +236,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="02_Mystery_Box" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_game_Playable_v2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="05_game_playabel_v3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="02_Mystery_Box" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_game_playabel_v3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="05_game_playabel_v4" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="02_Mystery_Box" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_game_playabel_v4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -421,19 +409,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.02_start_GUI_v2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.AA_complied_game_v1" />
-      <item index="2" class="java.lang.String" itemvalue="Python.03_game_GUI_v1" />
-      <item index="3" class="java.lang.String" itemvalue="Python.04_prize_generation_V5" />
-      <item index="4" class="java.lang.String" itemvalue="Python.05_game_Playable_v2" />
+      <item index="0" class="java.lang.String" itemvalue="Python.AA_complied_game_v1" />
+      <item index="1" class="java.lang.String" itemvalue="Python.03_game_GUI_v1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.05_game_Playable_v2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.05_game_playabel_v3" />
+      <item index="4" class="java.lang.String" itemvalue="Python.05_game_playabel_v4" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.05_game_Playable_v2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.03_game_GUI_v1" />
-        <item index="2" class="java.lang.String" itemvalue="Python.AA_complied_game_v1" />
-        <item index="3" class="java.lang.String" itemvalue="Python.04_prize_generation_V5" />
-        <item index="4" class="java.lang.String" itemvalue="Python.02_start_GUI_v2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.05_game_playabel_v4" />
+        <item index="1" class="java.lang.String" itemvalue="Python.05_game_playabel_v3" />
+        <item index="2" class="java.lang.String" itemvalue="Python.05_game_Playable_v2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.03_game_GUI_v1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.AA_complied_game_v1" />
       </list>
     </recent_temporary>
   </component>
@@ -491,14 +479,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/04_prize_generation_V5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/04_prize_generation_v2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -512,7 +492,7 @@
         <state relative-caret-position="1564">
           <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -522,7 +502,7 @@
         <state relative-caret-position="51">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#116#7564#0" expanded="false" />
           </folding>
         </state>
@@ -596,7 +576,7 @@
         <state relative-caret-position="1564">
           <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -606,7 +586,7 @@
         <state relative-caret-position="51">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#116#7564#0" expanded="false" />
           </folding>
         </state>
@@ -661,7 +641,7 @@
         <state relative-caret-position="1564">
           <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -671,7 +651,7 @@
         <state relative-caret-position="51">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#116#7564#0" expanded="false" />
           </folding>
         </state>
@@ -726,7 +706,7 @@
         <state relative-caret-position="1564">
           <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,7 +716,7 @@
         <state relative-caret-position="51">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#116#7564#0" expanded="false" />
           </folding>
         </state>
@@ -758,7 +738,7 @@
         <state relative-caret-position="1564">
           <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -768,7 +748,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#116#7564#0" expanded="false" />
           </folding>
         </state>
@@ -790,7 +770,7 @@
         <state relative-caret-position="1564">
           <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -800,7 +780,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#116#7564#0" expanded="false" />
           </folding>
         </state>
@@ -822,7 +802,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -843,26 +823,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/01_Starting_GUI_v1.py" />
     <entry file="file://$PROJECT_DIR$/01_Starting_GUI_v1.py" />
-    <entry file="file://C:/Program Files/Python35/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="2073" column="0" selection-start-line="2073" selection-start-column="0" selection-end-line="2073" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02_Start_GUI_v1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="94" column="61" selection-start-line="62" selection-start-column="3" selection-end-line="94" selection-end-column="61" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -872,7 +845,7 @@
         <state relative-caret-position="51">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
             <element signature="e#116#7564#0" expanded="false" />
           </folding>
         </state>
@@ -940,7 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/05_game_Playable_v2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="272">
           <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -950,8 +923,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/05_game_playabel_v3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="87" column="58" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
+        <state relative-caret-position="329">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python35/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="3393" column="0" selection-start-line="3393" selection-start-column="0" selection-end-line="3393" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05_game_playabel_v4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
