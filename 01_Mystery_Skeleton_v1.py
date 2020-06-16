@@ -21,7 +21,7 @@ class Start:
                                                "(between $5 and $50) in the box"
                                                "below. Then choose the stakes."
                                                "The higher the stakes, the more you can win!",
-                                          wrap=288, justidy=LEFT, padx=10, pady=10)
+                                          wrap=288, justify=LEFT, padx=10, pady=10)
         self.mystery_instructions.grid(row=1)
 
         # Entry box... (row 2)
