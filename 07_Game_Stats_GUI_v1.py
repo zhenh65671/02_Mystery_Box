@@ -142,17 +142,10 @@ class GameStats:
 
         # Dismiss Button (row 3)
 
-
-
-
-
-
-
-
-
-
-
-
+    def close_stats(self, partner):
+        # Put help button back to normal...
+        partner.stats_button.config(state=NORMAL)
+        self.stats_box.destroy()
 
 
 # main routine

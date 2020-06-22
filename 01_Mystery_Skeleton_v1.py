@@ -45,7 +45,6 @@ class Start:
         Game(self, stakes, starting_balance)
 
 
-
 class Game:
     def __init__(self, partner, stakes, starting_balance):
         print(stakes)
