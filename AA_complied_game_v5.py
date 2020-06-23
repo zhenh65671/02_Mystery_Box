@@ -32,7 +32,7 @@ class Start:
         self.entry_error_frame.grid(row=2)
 
         self.start_amount_entry = Entry(self.entry_error_frame,
-                                        font="Arial 14 bold",
+                                        font="Arial 14 bold", bg="white",
                                         text="Add funds")
         self.start_amount_entry.grid(row=0, column=0)
 
@@ -56,14 +56,14 @@ class Start:
 
         # Orange low stakes button...
         self.low_stakes_button = Button(self.stakes_frame, text="Low ($5)",
-                                       command=lambda: self.to_game(1),
-                                       font=button_font, bg="#FF9933")
+                                        command=lambda: self.to_game(1),
+                                        font=button_font, bg="#FF9933")
         self.low_stakes_button.grid(row=0,column=0, padx=10)
 
         # Yellow medium stakes button...
         self.medium_stakes_button = Button(self.stakes_frame, text="Medium ($10)",
-                                          command=lambda: self.to_game(2),
-                                          font=button_font, bg="#FFFF33")
+                                           command=lambda: self.to_game(2),
+                                           font=button_font, bg="#FFFF33")
         self.medium_stakes_button.grid(row=0, column=1, padx=5, pady=10)
 
         # Green high stakes button...
@@ -130,7 +130,7 @@ class Start:
                 self.low_stakes_button.config(state=NORMAL)
 
         except ValueError:
-            has_errors = "Yes"
+            has_error = "Yes"
             error_feedback = "Please enter a dollar amount (no text / decimals)"
 
         if has_error == "Yes":
@@ -148,46 +148,6 @@ class Start:
 
         Game(self, stakes, starting_balance)
 
-        self.start_frame.destroy()
-        Game(self, stakes, starting_balance)
-
-        # Set error background colours (and assume that there are no
-        # error at the start
-        error_back = "#ffafaf"
-        has_error = "no"
-
-        # Set error background t white (for testing purposes) ...
-        self.start_amount_entry.configure(bg="white")
-        self.amount_error_label.config(text="")
-
-        try:
-            starting_balance = int(starting_balance)
-
-            if starting_balance < 5:
-                has_error = "Yes"
-                error_feedback = "Sorry, the least you " \
-                                 "can play with is $5"
-            elif starting_balance > 50:
-                has_error = "Yes"
-                error_feedback = "Too high! The most you can risk in " \
-                                 "this game is 50"
-
-            elif starting_balance < 10 and (stakes == 2 or stakes == 3):
-                has_error = "Yes"
-                error_feedback = "Sorry, you can only afford to " \
-                                 "play a low stakes games."
-
-            elif starting_balance < 15 and stakes == 3:
-                has_error = "Yes"
-                error_feedback = "Sorry you only can afford to " \
-                                 "play a medium starks game."
-
-            # Hide start up window
-            # Root.withdraw()
-
-        except ValueError:
-            has_errors = "Yes"
-            error_feedback = "Please enter a dollar amount (no text / decimals)"
 
     def to_help(self):
         get_help = Help(self)
@@ -283,12 +243,12 @@ class Game:
 
         self.help_button = Button(self.help_export_frame, text="Help / Rules",
                                   font="Arial 15 bold",
-                                  bg="#808080", fg="white")
-        self.help_button.grid(row=5, column=0, padx=20)
+                                  bg="#808080", fg="white", command=self.to_help)
+        self.help_button.grid(row=5, column=0, pady=10)
 
         self.stats_button = Button(self.help_export_frame, text="Game Stats...",
                                    font="Arial 15 bold",
-                                   bg="#003366", fg="white")
+                                   bg="#003366", fg="white", command=self.to_stats)
         self.stats_button.grid(row=5, column=1, padx=2)
 
         # Quit Button
@@ -305,19 +265,27 @@ class Game:
         round_winnings = 0
         prizes = []
         stats_prizes = []
+
+        # Allows photo to change depending on stakes.
+        # Lead not in the list as that ia always 0
+        copper = ["copper_low.gif", "copper_med.gif", "copper_high.gif"]
+        silver = ["silver_low.gif", "silver_med.gif", "silver_high.gif"]
+        gold = ["gold_low.gif", "gold_med.gif", "gold_high.gif"]
+
         for item in range(0, 3):
             prize_num = random.randint(1, 100)
 
             if 0 < prize_num <= 5:
-                prize = PhotoImage(file="gold_low.gif")
+                # prize image references list, need -1 so position is correct
+                prize = PhotoImage(file=gold[stakes_multiplier-1])
                 prize_list = "gold (${})".format(5 * stakes_multiplier)
                 round_winnings += 5 * stakes_multiplier
             elif 5 < prize_num <= 25:
-                prize = PhotoImage(file="silver_low.gif")
+                prize = PhotoImage(file=silver[stakes_multiplier-1])
                 prize_list = "silver (${})".format(2 * stakes_multiplier)
                 round_winnings += 2 * stakes_multiplier
             elif 25 < prize_num <= 65:
-                prize = PhotoImage(file="copper_low.gif")
+                prize = PhotoImage(file=copper[stakes_multiplier-1])
                 prize_list = "copper (${})".format(1 * stakes_multiplier)
                 round_winnings += 1 * stakes_multiplier
             else:
@@ -381,6 +349,12 @@ class Game:
 
     def to_quit(self):
         root.destroy()
+
+    def to_stats(self, game_history, game_stats):
+        GameStats(self, game_history, game_stats)
+
+    def to_help(self):
+        get_help = Help(self)
 
 
 class Help:
@@ -541,6 +515,9 @@ class GameStats:
         # Put help button back to normal...
         partner.stats_button.config(state=NORMAL)
         self.stats_box.destroy()
+
+    def export(self, game_history, all_game_stats):
+        Export(self, game_history, all_game_stats)
 
 
 class Export:
