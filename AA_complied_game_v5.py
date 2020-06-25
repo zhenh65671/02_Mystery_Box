@@ -170,6 +170,7 @@ class Game:
 
         # List for holding statistics
         self.round_stats_list = []
+        self.game_stats = [starting_balance, starting_balance]
 
         # GUI Setup
         self.game_box = Toplevel()
@@ -248,7 +249,8 @@ class Game:
 
         self.stats_button = Button(self.help_export_frame, text="Game Stats...",
                                    font="Arial 15 bold",
-                                   bg="#003366", fg="white", command=self.to_stats)
+                                   bg="#003366", fg="white", command=lambda: self.to_stats(self.round_stats_list,
+                                                                                           self.game_stats))
         self.stats_button.grid(row=5, column=1, padx=2)
 
         # Quit Button
@@ -312,6 +314,7 @@ class Game:
 
         # Add winnings
         current_balance += round_winnings
+        self.game_stats[1] = current_balance
 
         # Set balance to new balance
         self.balance.set(current_balance)
@@ -329,7 +332,7 @@ class Game:
                                      5 * stakes_multiplier, round_winnings,
                                      current_balance)
         self.round_stats_list.append(round_summary)
-        print(self.round_stats_list)
+        # print(self.round_stats_list)
 
         # Edit label so user can see their balance
         self.balance_label.configure(text=balance_statement)
@@ -345,7 +348,7 @@ class Game:
             self.balance_label.config(fg="#660000", font="Arial 10 bold",
                                       text=balance_statement)
             self.round_stats_list.append(round_summary)
-            print(self.round_stats_list)
+            # print(self.round_stats_list)
 
     def to_quit(self):
         root.destroy()
@@ -510,6 +513,20 @@ class GameStats:
             self.games_played_value_label.grid(row=4, column=1, padx=0)
 
             # Dismiss Button (row 3)
+            self.export_dismiss_frame = Frame(self.stats_frame)
+            self.export_dismiss_frame.grid(row=3)
+
+            # Export Button
+            self.export_button = Button(self.export_dismiss_frame, text="Export...",
+                                        font="Arial 15 bold", bg="#003366", fg="white",
+                                        command=lambda: self.export(game_history, game_stats))
+            self.export_button.grid(row=0, column=0, padx=5)
+
+            # Dismiss Button
+            self.dismiss_button = Button(self.export_dismiss_frame, text="Dismiss",
+                                         font="Arial 15 bold", bg="#660000", fg="white",
+                                         command=partial(self.close_stats, partner))
+            self.dismiss_button.grid(row=0, column=1, pady=10)
 
     def close_stats(self, partner):
         # Put help button back to normal...
@@ -630,8 +647,11 @@ class Export:
             f.write("Game Statistics\n\n")
 
             # Game stats
-            for round in game_stats:
-                f.write(round + "\n")
+            f.write("Starting Balance: ${:.2f}\n".format(game_stats[0]))
+            f.write("Current Balance: ${:.2f}\n".format(game_stats[1]))
+
+            if game_stats[1] - game_stats[0] > 0:
+                f.write("Amount won: ${:.2f}\n".format(game_stats[1] - game_stats[0]))
 
             # Heading for Rounds
             f.write("\nRound Details\n\n")
