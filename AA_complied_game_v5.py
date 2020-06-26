@@ -652,6 +652,9 @@ class Export:
 
             if game_stats[1] - game_stats[0] > 0:
                 f.write("Amount won: ${:.2f}\n".format(game_stats[1] - game_stats[0]))
+            else:
+                game_stats[1] - game_stats[0] < 0
+                f.write("Amount lost: ${:.2f}\n".format(game_stats[1] - game_stats[0]))
 
             # Heading for Rounds
             f.write("\nRound Details\n\n")
